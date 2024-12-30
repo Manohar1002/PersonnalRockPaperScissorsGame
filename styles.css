@@ -1,0 +1,674 @@
+/* ------------------------------------------General Section ------------------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", serif;
+}
+.end {
+  display: none;
+}
+
+/* 89c15e */
+
+/* ------------------------------------------Conatainer ------------------------------------------------------*/
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 100%;
+  height: 100vh;
+  background-color: #89c15e;
+}
+
+/* ------------------------------------------Header/ScoreBoard Section ------------------------------------------------------*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 62.5%;
+  padding: 1.25rem;
+  border: 2px solid white;
+  border-radius: 13px;
+  margin: 3.8rem 0 0rem 0;
+}
+
+.heading h1 {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.scoreBoardSection {
+  display: flex;
+  gap: 2rem;
+}
+
+.scoreBoard {
+  text-align: center;
+  width: 10rem;
+  text-transform: uppercase;
+  border-radius: 9px;
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+
+.scoreBoard h1 {
+  font-size: 4.1rem;
+  line-height: 4.8rem;
+  font-weight: 700;
+}
+
+.scoreBoard p {
+  font-size: 1.05rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  color: #656565;
+  letter-spacing: 2px;
+}
+
+/* ------------------------------------------Selection Section ------------------------------------------------------*/
+
+.rock {
+  width: 5rem;
+  height: 3.6rem;
+  object-fit: cover;
+  object-position: top;
+}
+.scissors {
+  width: 2.7rem;
+  height: 3.3rem;
+  rotate: 5.27deg;
+}
+
+.paper {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+.middleSection {
+  position: relative;
+  display: grid;
+  width: 30rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "rock scissors"
+    "paper paper";
+  place-items: center;
+  height: 24rem;
+  margin: 3.5rem 13rem 0 14rem; /* chaged 3.5 to 1*/
+}
+
+.button[title="paper"] {
+  grid-area: paper;
+}
+.button[title="rock"] {
+  grid-area: rock;
+}
+.button[title="scissors"] {
+  grid-area: scissors;
+}
+
+.button {
+  background-color: white;
+  width: 8.8rem;
+  height: 8.8rem;
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 3px black);
+  z-index: 1;
+}
+.button2 {
+  background-color: white;
+  width: 10.75rem;
+  height: 10.75rem;
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 3px black);
+  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.rockBackground {
+  border: 16px solid #0074b6;
+}
+
+.scissorsBackground {
+  border: 16px solid #bd00ff;
+}
+
+.paperBackground {
+  border: 16px solid #ffa943;
+}
+
+.line {
+  position: absolute;
+  height: 15px;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 90px;
+  left: 167px;
+  z-index: 0;
+}
+
+.line3 {
+  position: absolute;
+  height: 15px;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 200px;
+  right: 100px;
+  z-index: 0;
+  rotate: 120deg;
+}
+
+.line2 {
+  position: absolute;
+  height: 15px;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 200px;
+  left: 100px;
+  z-index: 0;
+  rotate: -120deg;
+}
+
+/* ------------------------------------------Result Section ------------------------------------------------------*/
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.answerSection {
+  margin: 5rem 0; /*added bottom margin*/
+  height: 288px; /* added height*/
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 5rem;
+}
+
+.pulse {
+  position: relative;
+  background-color: #2e9a25;
+  border-radius: 50%;
+  width: 10.75rem;
+  height: 10.75rem;
+  margin: 2rem 0;
+}
+
+.pulse span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  animation: pulseAnimation 4s ease-out infinite;
+}
+
+.pulse span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.pulse span:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.pulse span:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.pulse span:nth-child(4) {
+  animation-delay: 3s;
+}
+.pulse span:nth-child(5) {
+  animation-delay: 4s;
+}
+
+@keyframes pulseAnimation {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.userSelection h1,
+.computerSelection h1 {
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.imageDimensions {
+  width: 3.75rem;
+  height: 3.75rem;
+  object-fit: cover;
+  object-position: top;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-align: center;
+  text-transform: Uppercase;
+  letter-spacing: 0.2rem;
+}
+.resultText {
+  font-size: 39px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.result p {
+  font-size: 25px;
+  font-weight: 800;
+}
+.playAgain {
+  text-transform: uppercase;
+  width: 11rem;
+  height: 2.75rem;
+  letter-spacing: 2px;
+  border-radius: 9px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b6b6b;
+  background-color: #fff;
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------Rules Section ------------------------------------------------------*/
+.rulesContainer {
+  position: absolute;
+  top: 326px;
+  left: 72rem;
+}
+
+.rulesBox {
+  position: absolute;
+  bottom: 83px; /*top: 326px*/
+  right: 38px; /* bottom: 72rem*/
+  width: 18rem;
+  height: 20.6rem;
+  background-color: #004429;
+  padding: 1.2rem;
+  border: 7px solid white;
+  border-radius: 13px;
+  /* opacity: 0; */
+  display: none;
+  z-index: 0;
+  transition: all 4s ease;
+}
+
+.rulesBoxPopUp {
+  display: block;
+  /* opacity: 1; */
+  transform: scale(1);
+}
+
+.rulesBox h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 29px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.rulesBox ul {
+  list-style: none;
+}
+
+.rulesBox li {
+  color: #ffffff;
+  font-size: 13px;
+  margin: 4px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  padding-left: 1rem;
+}
+
+.rulesBox li::marker {
+  content: "\25A0";
+  font-size: 1rem;
+  color: #ffd600;
+  vertical-align: bottom;
+}
+
+.closeRulesBox {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff0000;
+  border: 5px solid #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.closeRulesBox h2 {
+  font-family: "Dangrek", serif;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.closeIneffect:active {
+  transform: scale(0.95);
+}
+
+.rulesButtonDiv {
+  display: flex;
+  position: absolute;
+  bottom: 23px;
+  right: 25px;
+  gap: 2rem;
+}
+.rulesButton {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 119px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  float: left;
+}
+
+.rulesButton:hover,
+.button:hover {
+  cursor: pointer;
+}
+
+/* ------------------------------------------Final Page ------------------------------------------------------*/
+
+.finalPage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+#stars {
+  position: absolute;
+  top: 86px;
+  /* margin-right: 2rem; */
+  width: 500px;
+  height: 300px;
+  animation: starAnimation 3s ease-in-out 1;
+}
+#cup {
+  margin-top: 9rem;
+  width: 200px;
+  height: 201px;
+  animation: cupAnimation 3s ease-in-out 1;
+}
+
+.hurrayText {
+  font-size: 91px;
+  font-weight: 600;
+  letter-spacing: 9px;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: delayEffect 1s ease-in 3s 1 forwards;
+}
+
+.finalPage p {
+  font-size: 41px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  opacity: 0;
+  animation: delayEffect 1s ease-in 3.2s 1 forwards;
+}
+
+#playAgain2 {
+  margin-top: 3rem;
+  opacity: 0;
+  animation: delayEffect 1s ease-in 3.4s 1 forwards;
+}
+
+/* ------------------------------------------Keyframes  ------------------------------------------------------*/
+
+@keyframes starAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(0.2);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cupAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes delayEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------Media Query------------------------------------------ */
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 80%;
+  }
+  .answerSection,
+  .middleSection,
+  .finalPage,
+  .rulesBox,
+  .rulesButton {
+    transform: scale(0.9);
+  }
+  .rulesBox {
+    bottom: 45px;
+    right: 12px;
+  }
+}
+
+@media screen and (width: 1366px) {
+  .header,
+  .answerSection,
+  .middleSection,
+  .finalPage,
+  .rulesBox,
+  .rulesButton,
+  .nextButton {
+    transform: scale(0.8);
+  }
+  .rulesButtonDiv {
+    gap: 0.2rem;
+  }
+  .answerSection,
+  .middleSection {
+    margin-top: 1rem;
+  }
+
+  .rulesBox {
+    bottom: 45px;
+    right: 12px;
+  }
+  #stars {
+    top: 75px;
+  }
+  .header {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .header {
+    transform: scale(1.2);
+  }
+  .middleSection,
+  .answerSection {
+    transform: scale(1.4);
+    margin-top: 15rem;
+  }
+  .rulesBox {
+    width: 400px;
+    height: 450px;
+    bottom: 95px;
+  }
+  .rulesBox h2 {
+    font-size: 35px;
+  }
+  .rulesBox li {
+    font-size: 20px;
+  }
+
+  .rulesButton,
+  .nextButton {
+    width: 180px;
+    height: 60px;
+    font-size: 25px;
+  }
+
+  #stars {
+    top: 190px;
+    width: 700px;
+    height: 420px;
+  }
+  #cup {
+    width: 280px;
+    height: 282px;
+  }
+  .hurrayText {
+    font-size: 110px;
+  }
+  .finalPage p {
+    font-size: 48px;
+  }
+  #playAgain2 {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    background-color: rgb(12, 21, 53);
+  }
+  .pulse {
+    background-color: rgb(58, 74, 132);
+  }
+  .line,
+  .line2,
+  .line3 {
+    display: none;
+  }
+
+  .middleSection {
+    transform: scale(0.75);
+    margin: 3rem 2rem 1rem 2rem;
+    grid-template-rows: 1fr 1fr;
+    height: 0rem;
+    gap: 3rem;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    gap: 1rem;
+    transform: scale(0.6);
+  }
+
+  .header h1 {
+    text-align: center;
+  }
+
+  .answerSection {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transform: scale(0.6);
+  }
+  .finalPage {
+    transform: scale(0.6);
+  }
+  .sectionAnimationIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* transform: scale(0.6); */
+    position: relative;
+  }
+  .finalPage p {
+    text-align: center;
+    font-size: 24px;
+  }
+  #stars {
+    z-index: 0;
+    position: absolute;
+    top: 50px;
+  }
+  .rockBackground {
+    border: 16px solid #d10048;
+  }
+
+  .scissorsBackground {
+    border: 16px solid #435de7;
+  }
+
+  .paperBackground {
+    border: 16px solid #ffa943;
+  }
+  .end {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 119px;
+    height: 40px;
+    color: #fff;
+    top: 10px;
+    right: -10px;
+    border: 2px solid white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    transform: scale(0.6);
+  }
+}
