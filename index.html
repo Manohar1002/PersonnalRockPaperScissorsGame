@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="shortcut icon" href="" /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dangrek&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header" id="header">
+        <div class="heading">
+          <h1>Rock</h1>
+          <h1>Paper</h1>
+          <h1>Scissors</h1>
+        </div>
+        <div class="scoreBoardSection">
+          <div class="scoreBoard">
+            <p>
+              Your <br />
+              Score
+            </p>
+            <h1 id="yourScore">0</h1>
+          </div>
+          <div class="scoreBoard">
+            <p>
+              Computer <br />
+              Score
+            </p>
+            <h1 id="computerScore">0</h1>
+          </div>
+        </div>
+      </header>
+      <section class="middleSection" id="middleSection">
+        <div class="line"></div>
+        <div class="line2"></div>
+
+        <div class="line3"></div>
+        <button class="button rockBackground" title="rock">
+          <div>
+            <img src="./rockimg.png" alt="rock" class="rock" />
+          </div>
+        </button>
+        <button class="button scissorsBackground" title="scissors">
+          <div>
+            <img src="./scissorsimg.png" alt="scissors" class="scissors" />
+          </div>
+        </button>
+        <button class="button paperBackground" title="paper">
+          <div>
+            <img src="./paperimg.png" alt="paper" class="paper" />
+          </div>
+        </button>
+      </section>
+      <section class="answerSection">
+        <div class="userSelection">
+          <h1>You Picked</h1>
+
+          <div class="youWon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button class="button2" title="paper" id="userWonIcon">
+              <div>
+                <img
+                  src=""
+                  alt=""
+                  class="imageDimensions"
+                  id="yourAnswerImage"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="result">
+          <h1 class="resultText"></h1>
+          <p id="resultSub">Against PC</p>
+          <button class="playAgain">PLAY AGAIN</button>
+        </div>
+        <div class="computerSelection">
+          <h1>PC Picked</h1>
+          <div class="computerWOn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <button class="button2" id="computerWonIcon">
+              <div>
+                <img
+                  src=""
+                  alt=""
+                  class="imageDimensions"
+                  id="computerAnswerImage"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="rulesBox">
+        <button class="closeRulesBox">
+          <h2>X</h2>
+        </button>
+        <h2 class="gameRulesText">Game Rules</h2>
+        <ul>
+          <li>
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you'll count of "rock, paper, scissors
+            ,shoot" or just "rock, paper, scissors"
+          </li>
+          <li>
+            Use rock, paper,scissors to settle minor decisions or simple play to
+            pass the time
+          </li>
+          <li>
+            If both players lay down the same hand, each player lays downs
+            another hand
+          </li>
+        </ul>
+      </div>
+      <section class="finalPage" id="finalPage">
+        <div class="sectionAnimationIcons">
+          <!-- <img id="stars" src="./stars-removebg-preview.png" alt="stars" /> -->
+          <img id="cup" src="" alt="cup" />
+        </div>
+        <h1 class="hurrayText" id="finalMessage"></h1>
+        <p id="finalSubtext">You won the game</p>
+        <button class="playAgain" id="playAgain2">PLAY AGAIN</button>
+      </section>
+      <div class="rulesButtonDiv">
+        <button class="rulesButton closeIneffect">Rules</button>
+        <!-- <button class="nextButton" id="nextButton">Next</button> -->
+        <button id="end" class="end rulesButton">EXIT</button>
+      </div>
+      <div class="endButton">
+        <button id="end" class="end">EXIT</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
